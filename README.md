@@ -30,7 +30,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Link to Asana
-      uses: TalkToMeSARL/asana-actions
+      uses: TalkToMeSARL/asana-actions@v2.1
       with:
         asana-pat: <Your Asana Private Token>
 
