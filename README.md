@@ -1,3 +1,5 @@
+Based on eithanshavit/link-asana-commit-gh-action@v2
+
 # link-asana-commit-gh-action
 
 We often want to submit code that refers to tasks in Asana.
@@ -28,7 +30,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Link to Asana
-      uses: eithanshavit/link-asana-commit-gh-action@v2
+      uses: TalkToMeSARL/asana-actions
       with:
         asana-pat: <Your Asana Private Token>
 
