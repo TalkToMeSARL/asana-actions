@@ -1,0 +1,17 @@
+name: AsanaTaskLink
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  linkAsana:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Link commit with Asana
+        uses: eithanshavit/asana-link-commit-gh-action@v2.3
+        with:
+          asana-pat: 1/1202249710596714:3f8af5ba604d4f3a2bdb38188681c050
