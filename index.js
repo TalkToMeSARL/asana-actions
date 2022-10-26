@@ -40,11 +40,17 @@ function extractTaskID(commitMessage) {
   return null;
 }
 
+function extractComment(commitMessage) {
+  let commentTask = commitMessage.split('TASK');
+  return commentTask[0].trim();
+}
+
 async function processCommit(asanaClient, commit) {
   core.info("Processing commit " + commit.url);
   const taskId = extractTaskID(commit.message);
+  const comment = extractComment(commit.message);
   if (taskId) {
-    writeComment(asanaClient, taskId, commit.message + "\nRef: " + commit.url);
+    writeComment(asanaClient, taskId, comment + "\n\n" + "Ref: " + commit.url);
   } else {
     core.notice(`No Asana task URL provided in commit message.`);
   }
